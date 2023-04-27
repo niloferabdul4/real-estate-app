@@ -3,21 +3,21 @@ import styled from "styled-components";
 import { mobile } from "../../Responsive";
 
 const HeaderContainer=styled.div`
-    height:90px;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    background-color: #fff;
+    height: 70px;
+    box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
+    padding: 6px 0;
     position: sticky;
-    top:0;
-    z-index: 100;
-    background-color:#f1c40f;
+    top: 0;
+    //z-index: 99999;
+    display:flex;
+    flex-direction:row;
     ${mobile({ height:'50px', margin:'0px',width:'100%'})}   
  
 `
 
-const LeftWrapper=styled.div`
-    flex:0.5;
+const LeftWrapper=styled.div`    
+    flex:0.3;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,69 +29,33 @@ const LeftWrapper=styled.div`
 const Logo=styled.h2`
     text-align: center;
     align-items: center;
-    margin-right: 30px;
-    object-fit: contain;
+    margin-right: 10px;
+   // object-fit: contain;
     color:red;
     ${mobile({ fontSize: "14px",marginRight:'5px' })}
 `
 
-const SearchBox=styled.div`
-    display: flex;
-    font-size: 16px;
-    align-items: center;
-    border:0.3px solid lightgrey;
-    ${mobile({ fontSize: "14px"})}
-     
-   
-`
-
-const SearchButton=styled.button`
-    margin-left:0px;
-    color:#2874f0;
-    background-color:white;
-    padding: 8px;
-    height:30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:none;
-    ${mobile({height:'20px',padding:'6px'})}
-`
-const Form=styled.form`
-    display: flex;
-    align-items: center;
-     
-`
-const Input=styled.input`
-    height:30px;
-    width:300px;
-    border-radius: 1px;
-    border:none;
-    padding:10px;
-    ${mobile({width:'60px',height:'15px'})}
-`
-
 const Button=styled.button`
-    padding: 10px;
+    padding: 12px;
     width: 150px;
     height:40px;
     border-radius: 8px;
     font-size: 1rem;
     border: none;
-    background-color:red;
+    background-color:blue;
     color:white;
     font-weight:600;
     ${mobile({ height:'30px',fontSize:'0.8rem'})}
 `
 
 const RightWrapper=styled.div`
-    flex:0.5;
+    flex:0.7;
     display:flex;
-    margin-right: 50px;
+    margin-right: 10px;
     align-items: center;
     justify-content: space-around;
     color:#6F7378;
-    ${mobile({ flex:2,gap:'1px',justifyContent:'space-around' })}
+    ${mobile({ gap:'1px',justifyContent:'space-around' })}
 `
  
 const Span=styled.span`
@@ -118,9 +82,10 @@ const Links=styled(NavLink)`
     font-size: 18px;
     text-decoration: none;
     color:#6F7378;
+   
     ${mobile({ fontSize:'14px',marginLeft: "20px",gap:'0px' })}
     
     
 `
 
-export {HeaderContainer,LeftWrapper,Logo,RightWrapper,Button,Links,Span,Form,Input,SearchBox,SearchButton}
+export {HeaderContainer,LeftWrapper,Logo,RightWrapper,Button,Links,Span}
