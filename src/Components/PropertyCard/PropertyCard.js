@@ -1,19 +1,20 @@
 import React from 'react'
-import { PropCard,PropImage,PropInfoContainer ,Description} from './style';
+import { PropCard,PropImage,PropInfoContainer ,Description,Name} from './style';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Button,BtnContainer } from '../RecentProperty/style';
 import { useNavigate } from 'react-router-dom';
-const PropertyCard = ({id,name,image,country,price,address,description}) => {
+const PropertyCard = ({id,name,image,country,price,address,description,category}) => {
   const navigate=useNavigate()
  
 
   return (
     <>
        <PropCard >                       
-        <PropImage src={image} alt='' role='button' onClick={()=>{navigate(`/detail/${id}`)}} />      
+        <PropImage src={image} alt='' role='button' onClick={()=>{navigate(`/details/${id}`)}} />      
                 <PropInfoContainer>                         
-                    <h3>{name}</h3>
+                    <Name>{name}</Name>                    
                     <span style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start'}}>
+                    <p><strong>Category: </strong>{category}</p>
                       <p><LocationOnIcon fontSize='small'/>{country}</p>
                       <p> {address}</p>
                       <Description> {description}</Description>
@@ -21,7 +22,7 @@ const PropertyCard = ({id,name,image,country,price,address,description}) => {
                 </PropInfoContainer>
                 <BtnContainer> 
                   <h3>Aed              
-                  <Button>{price}/sqft</Button> 
+                  <Button>{price} /yr </Button> 
                   </h3>           
                 </BtnContainer>
         </PropCard>        

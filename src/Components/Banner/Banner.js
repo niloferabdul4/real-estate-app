@@ -1,40 +1,44 @@
 import React from 'react';
-import { BannerContainer,Form,FilterBox,Input,Span,SearchBox, SearchButton} from './style';
+import { BannerContainer,Form,Select,FilterBox,Input,Label} from './style';
 import { SearchOutlined } from '@mui/icons-material';
 const Banner = () => {
     return (
         <>
-        <BannerContainer>   
-           
+        <BannerContainer>             
         
-          <h1>Search Your Next Home</h1>
-          <h3>Find new & featured property located in your local city.</h3> 
-
+          <h1>Find The Perfect Place</h1>
+          <h2>Find new & featured property located in your local city.</h2> 
           <Form>
             <FilterBox>
-              <Span>City/Street</Span>
+              <Label>City/Street</Label>
               <Input type='text' placeholder='Location' />
             </FilterBox>
             <FilterBox>
-              <Span>Property Type</Span>
-              <Input type='text' placeholder='Property Type' />
+              <Label>Property Sale/Rent</Label>
+              <Select>
+                <option>For Sale</option>
+                <option>For Rent</option>
+              </Select>
             </FilterBox>
             <FilterBox>
-              <Span>Price Range</Span>
-              <Input type='text' placeholder='Price Range' />
+              <Label>Property Type</Label>
+              <Select>
+                <option>House</option>
+                <option>Villa</option>
+                <option>Apartment</option>
+                <option>Office</option>
+              </Select>
             </FilterBox>
-            <SearchBox>
-              <Span>Advanced Search</Span>
-              <Input type='text' placeholder='Search' />
-              <SearchButton>
-                    <SearchOutlined size={20} type='button' />
-                </SearchButton>     
-            </SearchBox>
-          </Form>
-        
-   
+            <FilterBox>
+              <Label>Price Range</Label>
+              <Select>
+                <option>Below Aed 10000 </option>
+                <option>Aed 10000-Aed 20000</option>
+                <option>Above Aed 20000 </option>
+              </Select>
+            </FilterBox>
            
-             
+          </Form>               
         </BannerContainer>
         </>
     );

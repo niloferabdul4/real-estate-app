@@ -1,15 +1,22 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Card,CategoryTitle,Image,InfoContainer,Button } from './style'
 import { useNavigate } from 'react-router-dom'
+import { FilterContext } from '../../Context/FilterContextProvider'
 
-const CategoryCard = ({category}) => {
-
+const CategoryCard = ({title,icon,category}) => {
+  const {dispatch}=useContext(FilterContext)
   const navigate=useNavigate()
+
+  const handleClick=(category)=>{
+    console.log(category)
+    dispatch({type:'SELECT_BY_CATEGORY',payload:category})
+    navigate(`/category/${category}`)
+  }
  
   return (
-    <Card role='button' onClick={()=>{navigate(`/category/${category.category}`)}} >               
-                        <CategoryTitle> {category.title}</CategoryTitle>
-                        <Image src={category.icon}  alt=''/>                  
+    <Card role='button' onClick={()=>handleClick(category)} >               
+                        <CategoryTitle> {title}</CategoryTitle>
+                        <Image src={icon}  alt=''/>                  
                         <InfoContainer>                          
                             <Button>VIEW MORE</Button>
                         </InfoContainer>                              

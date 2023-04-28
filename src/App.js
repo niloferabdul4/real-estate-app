@@ -3,41 +3,32 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { Routes,Route } from 'react-router-dom';
-import Home from './Components/Home/Home';
+import Home from './Pages/Home/Home';
 import PropByCategory from './Pages/Property/PropByCategory';
 import PropertyDetails from './Pages/PropertyDetails/PropertyDetails';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import { useContext } from 'react';
 import { PropContext } from './Context/PropContextProvider';
+import PropByType from './Pages/Property/PropByType';
 
 function App() {
   const {user}=useContext(PropContext)
 
   return (
     <div className="App">
-      {!user? 
-      (
-       <>
-       <Login />
-      
-      </>
-      )
-    :
-    
-      (
               <>
-                <Header />                
+                              
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={user ? <Home /> : <Register />} />
                     <Route path='/category/:category' element={<PropByCategory/>}/>
-                    <Route path="/detail/:id" element={<PropertyDetails/>}/>
-                    <Route path='/register' element={<Register/>} />
+                    <Route path='/property/:property' element={<PropByType/>}/>
+                    <Route path="/details/:id" element={<PropertyDetails/>}/>
+                    <Route path='/login' element={user ? <Home /> : <Login />} />
+                    <Route path='/register' element={user ? <Home /> : <Register />} />
                 </Routes>
-                <Footer />
+             
     </>
-      )
-}           
 
     </div>
   );

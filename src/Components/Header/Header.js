@@ -5,17 +5,28 @@ import { PropContext } from '../../Context/PropContextProvider';
 import { auth } from '../../Firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import { FilterContext } from '../../Context/FilterContextProvider';
 
 const Header = () => {
   const {user}=useContext(PropContext)
+  const {state:{setSelectedPropType,selectedPropType},dispatch}=useContext(FilterContext)
   const navigate=useNavigate()
-  
+
+  const list=[{id:1,title:'Property For Sale', type:'Sale'},{id:2,title:'Property For Rent',type:'Rent'}]
+const handleClick=(event)=>
+{
+ 
+  dispatch({type:'SELECT_BY_TYPE',payload:event.target.value})
+  navigate(`/property/${event.target.value}`)
+}
+
   const logoutFn = () => {
     if(user){
         signOut(auth);
         navigate('/login')
     }
 }
+
   return (
     <div>
        <HeaderContainer>
@@ -29,8 +40,8 @@ const Header = () => {
                         <FavoriteBorderOutlined/>                    
                          <p>Favourites </p>                                             
                     </Span> 
-                    <Links to='For Sale' >Property For Sale</Links>
-                    <Links to ='For Rent'>Property For Rent</Links> 
+                    {list.map(item=>{return <Button key={item.id} value={item.type} onClick={handleClick}>{item.title}</Button>})}
+                   
                     {!user?
                     (
                     <>

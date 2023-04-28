@@ -12,7 +12,7 @@ const Featured = () => {
 
   return (
     <>
-    <h2>Recent Properties</h2>
+    <h2 style={{color:'#5A5A5A'}}>Recent Properties</h2>
     <FeaturedContainer>
      
      <Slider {...settings} >        
@@ -23,6 +23,7 @@ const Featured = () => {
                                                             address={item.data.address}
                                                             price={item.data.price} 
                                                             country={item.data.country}
+                                                            category={item.data.category}
                                                             property={item.data.property}/>})}
      </Slider>
     </FeaturedContainer>

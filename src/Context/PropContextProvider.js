@@ -9,8 +9,28 @@ export const PropContext=createContext()
 const PropContextProvider = ({children}) => {
     const [property,setProperty]=useState([])
     const [propByCategory,setPropByCategory]=useState([])
+    const [selectedPropType,setSelectedPropType]=useState('')
+    const [propByType,setPropByType]=useState([])
     const [singleProperty,setSingleProperty]=useState({})
+    const [agents,setAgents]=useState([])
     const [user,setUser]=useState('')
+
+
+    useEffect(()=>{
+      const unSub=onAuthStateChanged(auth,(user)=>{
+      if(user)
+      {
+        setUser({email:user.email,displayName:user.displayName})
+      }
+      else
+      {
+        setUser(null)
+      }
+  
+      })
+      return ()=>unSub
+    },[])  
+
     useEffect(()=>{
       
         const unSub=onSnapshot(collection(db,'property'),(snapshot)=>{
@@ -25,25 +45,24 @@ const PropContextProvider = ({children}) => {
           unSub();
         };
       },[])
+
      
-      useEffect(()=>{
-        const unSub=onAuthStateChanged(auth,(user)=>{
-        if(user)
-        {
-          setUser({email:user.email,displayName:user.displayName})
-        }
-        else
-        {
-          setUser(null)
-        }
-    
-        })
-        return ()=>unSub
-      },[])  
+     
+     
   return (
    
     <>
-      <PropContext.Provider value={{property,propByCategory,setPropByCategory,singleProperty,setSingleProperty,user,setUser}} >
+      <PropContext.Provider value={{property,
+                                    propByCategory,
+                                    setPropByCategory,
+                                    propByType,
+                                    setPropByType,
+                                    selectedPropType,
+                                    setSelectedPropType,
+                                    singleProperty,
+                                    setSingleProperty,
+                                    user,setUser,
+                                    agents,setAgents}} >
         {children}
       </PropContext.Provider>
     </>

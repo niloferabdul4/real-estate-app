@@ -9,11 +9,15 @@ export const PropCard=styled.div`
     //border:0.5px solid lightgrey;
     background-color: white;
     z-index: 1;
-    height:560px;
+    height:600px;
     max-height: 600px;
     max-width: 380px;  
     color:rgba(0,0,0,0.7); 
     box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%); 
+    &:hover{
+        box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
+        cursor: pointer;
+    }
     ${mobile({ minHeight:'320px',maxWidth:'180px',margin:'0px',boxShadow:'none'})}
 `
 
@@ -35,7 +39,11 @@ export const PropInfoContainer=styled.div`
  
 `
 
+export const Name=styled.p`
+    font-size:20px;
+    font-weight:600;
 
+`
 export const Price=styled.div`
     margin:0px;
     ${mobile({ fontSize:'14px',margin:'10px'})}

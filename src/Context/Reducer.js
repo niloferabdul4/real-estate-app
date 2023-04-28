@@ -1,14 +1,19 @@
 const Reducer=(state,action)=>{
     switch(action.type){
-        case 'SELECT_CATEGORY':   
+        case 'SELECT_BY_CATEGORY':   
         return {
 
           ...state,
-          selectedCategory:action.payload,
+          selectedPropCategory:action.payload
                       
         };
-        case 'LOAD_PROPERTIES':
-            return{...state,propByCategory:action.payload}
+        case 'SELECT_BY_TYPE':
+          return {
+
+            ...state,
+            selectedPropType:action.payload
+                        
+          };
 
         case 'default':
           return {...state}

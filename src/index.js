@@ -5,15 +5,16 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import PropContextProvider from './Context/PropContextProvider';
+import FilterContextProvider from './Context/FilterContextProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <PropContextProvider>
-    
-         <App/>
-   
+        <FilterContextProvider>
+           <App />
+        </FilterContextProvider>
     </PropContextProvider>  
     </BrowserRouter>   
   </React.StrictMode>
