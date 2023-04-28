@@ -5,14 +5,9 @@ import { useNavigate } from 'react-router-dom'
 const CategoryCard = ({category}) => {
 
   const navigate=useNavigate()
-  
-  const handleCategory=()=>{  
-   navigate(`/${category.category}`)
-   
-  }
-  
+ 
   return (
-    <Card role='button' onClick={handleCategory} >               
+    <Card role='button' onClick={()=>{navigate(`/category/${category.category}`)}} >               
                         <CategoryTitle> {category.title}</CategoryTitle>
                         <Image src={category.icon}  alt=''/>                  
                         <InfoContainer>                          

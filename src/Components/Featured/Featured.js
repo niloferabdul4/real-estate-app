@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import RecentPropertyCard from '../RecentProperty/RecentPropertyCard';
 const Featured = () => {
  const {property}=useContext(PropContext)
- console.log(property)
+
   return (
     <>
     <h2>Recent Properties</h2>
@@ -17,6 +17,7 @@ const Featured = () => {
      
      <Slider {...settings} >        
         {property?.map(item=>{return <RecentPropertyCard key={item.id}
+                                                            id={item.id}
                                                             name={item.data.name} 
                                                             image={item.data.image}
                                                             address={item.data.address}

@@ -18,7 +18,7 @@ const PropByCategory = () => {
         const propRef=collection(db,'property')
         const queryRef=query(propRef,where("category",'==',category))
         const docSnapshot= await getDocs(queryRef)
-       const newArr= docSnapshot.docs.map((doc) => ({
+        const newArr= docSnapshot.docs.map((doc) => ({
             id: doc.id,
             data:doc.data()
           }));
@@ -31,13 +31,15 @@ const PropByCategory = () => {
   <>
     <PropContainer>
       {propByCategory?.map(item=>{return <PropertyCard key={item.id}
+                                                            id={item.id}
                                                             name={item.data.name} 
                                                             image={item.data.image}
                                                             address={item.data.address}
                                                             price={item.data.price} 
                                                             country={item.data.country}
                                                             description={item.data.description}
-                                                            property={item.data.property}/>})}
+                                                            property={item.data.property}
+                                                            />})}
     </PropContainer>
     </>
   )

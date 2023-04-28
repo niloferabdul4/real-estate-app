@@ -1,13 +1,14 @@
 import React from 'react'
 import { Card,Image,InfoContainer,Span,BtnContainer,Button } from './style'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-const RecentPropertyCard = ({name,image,address,price,country,property}) => {
-
+import { useNavigate } from 'react-router-dom';
+const RecentPropertyCard = ({id,name,image,address,price,country,property}) => {
+  const navigate=useNavigate()
   return (
     <>
        <Card>        
                
-              <Image src={image} alt='' />      
+              <Image src={image} alt=''  role='button' onClick={()=>{navigate(`/detail/${id}`)}}/>      
               <InfoContainer>                         
                   <h3>{name}</h3>
                   <span style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start'}}>
