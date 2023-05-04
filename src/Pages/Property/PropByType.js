@@ -3,16 +3,14 @@ import { PropContext } from '../../Context/PropContextProvider'
 import { PropContainer } from './style'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import { useParams } from 'react-router-dom'
 import PropertyCard from '../../Components/PropertyCard/PropertyCard'
 import { collection,where,query,getDocs } from '@firebase/firestore'
 import { db } from '../../Firebase/firebase'
-import { FilterContext } from '../../Context/FilterContextProvider'
 
 const PropByType = () => {
 
-    const {propByType,setPropByType}=useContext(PropContext)
-    const {state:{selectedPropType}}=useContext(FilterContext)
+    const {state:{propByType,selectedPropType},dispatch}=useContext(PropContext)
+
     useEffect(()=>{getPropsByType()},[selectedPropType])
 
       
@@ -24,9 +22,10 @@ const PropByType = () => {
             id: doc.id,
             data:doc.data()
           }));
-          setPropByType(newArr)
-          console.log(propByType)
+          dispatch({type:'SET_PROPERTIES_BY_TYPE',payload:newArr})       
+         
         }
+      
   return (
     <>
        <Header/>
@@ -40,6 +39,10 @@ const PropByType = () => {
                                                             country={item.data.country}
                                                             description={item.data.description}
                                                             property={item.data.property}
+                                                            category={item.data.category}
+                                                            bedrooms={item.data.bedrooms}
+                                                            bathrooms={item.data.bathrooms}
+                                                            
                                                             />})}
     </PropContainer>
     <Footer />
