@@ -1,16 +1,19 @@
 import React,{useContext} from 'react'
 import { Card,CategoryTitle,Image,InfoContainer,Button } from './style'
 import { useNavigate } from 'react-router-dom'
-import { FilterContext } from '../../Context/FilterContextProvider'
+import { PropContext } from '../../Context/PropContextProvider'
 
 const CategoryCard = ({title,icon,category}) => {
-  const {dispatch}=useContext(FilterContext)
+const {dispatch}=useContext(PropContext)
   const navigate=useNavigate()
 
   const handleClick=(category)=>{
+    
     console.log(category)
-    dispatch({type:'SELECT_BY_CATEGORY',payload:category})
+    dispatch({type:'SELECTED_CATEGORY',payload:category})
     navigate(`/category/${category}`)
+
+
   }
  
   return (

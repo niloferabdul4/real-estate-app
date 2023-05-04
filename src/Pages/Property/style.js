@@ -3,10 +3,10 @@ import { mobile } from "../../Responsive";
 
 export const PropContainer=styled.div`
     display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
     grid-column-gap:20px;
     z-index: 1;      
-    margin: 30px 50px;
+    margin: 30px 30px;
     max-width  :100% ;
     padding: 10px;
     margin-bottom: 20px;

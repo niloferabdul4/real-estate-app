@@ -15,7 +15,7 @@ export const Container=styled.div`
 export const ImageContainer=styled.div`
         flex:0.5;
         padding:20px;
-        max-height: 500px;
+        max-height: 700px;
         display: flex;
         justify-content: center; 
         ${mobile({ maxHeight:'250px'})}       
@@ -49,7 +49,7 @@ export const Price=styled.div`
         gap:5px;     
         font-size: 22px;
         font-weight:600;
-        color:red;
+        color:orangered;
         ${mobile({ fontSize:'20px'})}
 `
 
@@ -75,13 +75,18 @@ export const Address=styled.p`
         text-align: justify;
         ${mobile({ fontSize:'16px'})}             
 `
-export const Rooms=styled.div` 
-width:40%;   
+export const Span=styled.div` 
+        width:80%;   
         font-size:18px;
-        text-align: justify;
+        gap:15px;
         display:flex;
         flex-direction:row;
-        justify-content:space-between;
+        align-items:center;
         color:green;
+      p{
+        border-right:0.5px solid grey;
+        padding-right:20px;
+      }
+       
         ${mobile({ fontSize:'16px'})}             
 `

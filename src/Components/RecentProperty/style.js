@@ -14,11 +14,15 @@ export const Card=styled.div`
     background-color: white;
     z-index: 1;
     height:460px;
-   // max-height: 560px;
+    max-height: 700px;
     max-width: 320px;  
     color:rgba(0,0,0,0.7); 
-    box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%); 
     position:relative;
+    transition: 0.3s;
+    &:hover{
+        box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
+        cursor: pointer;
+    }
     ${mobile({ minHeight:'320px',maxWidth:'180px',margin:'0px',boxShadow:'none'})}
 `
 
@@ -35,12 +39,13 @@ export const InfoContainer=styled.div`
     
 display:flex;
 flex-direction:column;  
+
     p{
       display: -webkit-box;
       overflow: hidden;
         -webkit-line-clamp: 1;
      -webkit-box-orient: vertical;   
-
+     margin-left:0px;
     }
 `
    
@@ -56,6 +61,7 @@ flex-direction:column;
     right:10px;
     background-color:green;
     color:white;
+    opacity:0.8;
   
   `
 
@@ -72,6 +78,7 @@ flex-direction:column;
   `
 export const Button=styled.button`
 border:none;
+opacity:0.8;
 background-color:orangered;
 color:white;
 padding: 8px;

@@ -35,19 +35,6 @@ const Logo=styled.h2`
     ${mobile({ fontSize: "14px",marginRight:'5px' })}
 `
 
-const Button=styled.button`
-    padding: 12px;
-    width: 150px;
-    height:40px;
-    border-radius: 8px;
-    font-size: 1rem;
-    border: none;
-    background-color:blue;
-    color:white;
-    font-weight:600;
-    ${mobile({ height:'30px',fontSize:'0.8rem'})}
-`
-
 const RightWrapper=styled.div`
     flex:0.7;
     display:flex;
@@ -77,15 +64,25 @@ const Span=styled.span`
        
     }
 `
-
-const Links=styled(NavLink)`
+const PropBtn=styled.button`
     font-size: 18px;
-    text-decoration: none;
     color:#6F7378;
-   
+    background:transparent;
+    border:none;
+    cursor:pointer;
     ${mobile({ fontSize:'14px',marginLeft: "20px",gap:'0px' })}
     
     
 `
 
-export {HeaderContainer,LeftWrapper,Logo,RightWrapper,Button,Links,Span}
+const Links=styled(NavLink)`
+    font-size: 20px;
+    text-decoration: none;
+    color:#6F7378;
+   cursor:pointer;
+    ${mobile({ fontSize:'14px',marginLeft: "20px",gap:'0px' })}
+    
+    
+`
+
+export {HeaderContainer,LeftWrapper,Logo,RightWrapper,PropBtn,Links,Span}

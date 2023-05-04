@@ -7,7 +7,7 @@ import { PropContext } from '../../Context/PropContextProvider'
 import { Wrapper,Box,InfoContainer,ImageContainer,Image,Label,Button, ButtonContainer } from './style'
 
 const Agents = () => {
-    const {agents,setAgents}=useContext(PropContext)
+  const {state:{agents},dispatch}=useContext(PropContext)
     useEffect(()=>{
       
         const unSub=onSnapshot(collection(db,'agents'),(snapshot)=>{
@@ -15,7 +15,7 @@ const Agents = () => {
             id: doc.id,
             data:doc.data()
           }));
-          setAgents(newItems); 
+          dispatch({type:'SET_AGENTS',payload:newItems}); 
        
         })
         return () => {
@@ -33,11 +33,12 @@ const Agents = () => {
             
                  <Box>
                   <ImageContainer>
-                    <Image src={item.data.image} alt='' />                   
+                    <Image src={item.data.image} alt='' />                      
                   </ImageContainer>
                  <InfoContainer>
                   <Label>{item.data.address}</Label>
-                  <h3>{item.data.name}</h3>
+                  <h3>{item.data.name} </h3>
+                  <p>{item.data.listings} Listings</p>
                   </InfoContainer>
                   <ButtonContainer>
                     <Button>

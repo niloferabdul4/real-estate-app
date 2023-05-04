@@ -10,13 +10,15 @@ export const PropCard=styled.div`
     background-color: white;
     z-index: 1;
     height:600px;
-    max-height: 600px;
-    max-width: 380px;  
-    color:rgba(0,0,0,0.7); 
+    max-height: 700px;
+    max-width: 400px;  
+    color:rgba(0,0,0,0.7)
+    cursor:pointer; 
+    position:relative;
     box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%); 
     &:hover{
         box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
-        cursor: pointer;
+       
     }
     ${mobile({ minHeight:'320px',maxWidth:'180px',margin:'0px',boxShadow:'none'})}
 `
@@ -24,7 +26,7 @@ export const PropCard=styled.div`
 export const PropImage=styled.img`
     object-fit: cover;
     width:100%;
-    height:100%; 
+    height:100%;   
     ${mobile({ width:'140px',height:'140px',marginBottom:'10px'})}
     `
 
@@ -48,7 +50,15 @@ export const Price=styled.div`
     margin:0px;
     ${mobile({ fontSize:'14px',margin:'10px'})}
 `
+export const Address=styled.p`
 
+display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;   
+    text-align:justify;
+
+`
 export const Description=styled.div`
     display: -webkit-box;
     overflow: hidden;
@@ -56,4 +66,36 @@ export const Description=styled.div`
     -webkit-box-orient: vertical;   
     text-align:justify;
     ${mobile({ fontSize:'14px',margin:'0px'})}  
+`
+
+
+export const Span =styled.div`
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    width:50px;
+    display: inline-block;
+    position:absolute;
+    top:0;
+    right:10px;
+    background-color:green;
+    color:white;
+
+`
+
+
+export const Category=styled.div`
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    position:absolute;
+    top:240px;
+    left:10px;
+    background-color:yellow;
+    opacity:0.8;
+   
+
 `

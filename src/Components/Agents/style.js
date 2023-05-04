@@ -1,22 +1,22 @@
 import styled from "styled-components";
 export const Wrapper=styled.div`
     display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
     grid-column-gap:15px;
     z-index: 1;      
     margin-left: 100px;
     margin-right: 100px;  
     padding: 10px;
     margin-bottom: 20px;
-
+    
 `
 
 
 export const Box=styled.div`
-    width:260px;
-    height:300px;
-    margin:50px;
-    background: #ffffff;
+    width:280px;
+    height:340px;
+    margin:30px;
+    background-color:white;
     border-radius: 6px;
     border: 1px solid rgb(62 28 131 / 10%);
     padding: 1rem;
@@ -33,8 +33,8 @@ export const Box=styled.div`
   
   `
   export const ImageContainer=styled.div`
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     margin: auto;
     position: relative;
   `

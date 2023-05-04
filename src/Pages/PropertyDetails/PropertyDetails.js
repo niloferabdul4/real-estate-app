@@ -1,28 +1,55 @@
-import React, { useContext,useEffect } from 'react'
+import React, { useState,useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { getDoc,doc } from '@firebase/firestore'
+import { collection,onSnapshot,getDoc,doc, getDocs } from '@firebase/firestore'
 import { db } from '../../Firebase/firebase'
-import { PropContext } from '../../Context/PropContextProvider'
-import { Container,ImageContainer,Image,InfoContainer,Title, Price,Description,Category,Address,Rooms} from './styles'
+import { Container,ImageContainer,Image,InfoContainer,Title, Price,Description,Address,Span,Button,ButtonContainer,Agent,AgentName,ContactNumber} from './styles'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+import PropertyAgent from '../../Components/PropertyAgent/PropertyAgent'
+import { PropContext } from '../../Context/PropContextProvider'
 
 const PropertyDetails = () => {
-    const {singleProperty,setSingleProperty}=useContext(PropContext)
+    const {dispatch}=useContext(PropContext)
+    const [singleProperty,setSingleProperty]=useState([])
+   
+
     const {id}=useParams()
-    useEffect(() => {
+    const updatedPrice=new Intl.NumberFormat('en-US').format(singleProperty.price)
+
+     useEffect(() => {
         id && getSingleProps();
-      
+       
       }, [id]);
         
-      const getSingleProps = async () => {        
+      const getSingleProps = async () =>
+       {        
         const docRef = doc(db, "property", id);
         const propDetail = await getDoc(docRef);
         setSingleProperty(propDetail.data());
         
-          
-            }
-           
+      }
+        
+useEffect(()=>{
+
+  {   
+
+     const unSub=onSnapshot(collection(db,'property',id,'agent'),(snapShot)=>
+    {
+      const agent=snapShot.docs.map((item)=>(item.data()))
+      dispatch({type:'SET_SINGLE_PROPERTY_AGENT',payload:agent})
+    })
+    
+    return () => {
+      unSub();
+    };
+    
+ }
+
+
+},[id])
+     
+     
+
   return (
     <> 
     <Header/>
@@ -33,19 +60,29 @@ const PropertyDetails = () => {
 
                  <InfoContainer>
                         <Title>{singleProperty?.name}</Title>
-                        <hr style={{marginBottom:'10px', marginTop:'0px'}}></hr>
+                   
                         <Price>
                             <small>Aed</small>
-                            <strong>{singleProperty?.price} / yr</strong>                       
+                            <strong>{updatedPrice} / yr</strong>   
+                                   
                         </Price>
-                        <Category>Category: {singleProperty.category}</Category>
-                        <Address> {singleProperty?.address}</Address>
-                        <Rooms >
+                     
+                       
+                        <Address> 
+                          {singleProperty?.address}   
+                          <hr></hr>         
+                        </Address>
+                        <Span >
+                          <p>Category: {singleProperty.category}</p>
+                     
                           <p>Bedrooms: {singleProperty?.bedrooms}</p>
+                       
                           <p>Bathrooms: {singleProperty?.bathrooms}</p>
-                        </Rooms>
-                        <Description>{singleProperty?.description}</Description>           
-                 </InfoContainer>            
+                        </Span>
+                        <Description>{singleProperty?.description}</Description>    
+                        <PropertyAgent />                    
+                 </InfoContainer> 
+                         
            </Container>
            <Footer />
     </>

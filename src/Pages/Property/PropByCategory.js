@@ -6,14 +6,14 @@ import { PropContainer } from './style'
 import { PropContext } from '../../Context/PropContextProvider'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import { FilterContext } from '../../Context/FilterContextProvider'
+
+
 const PropByCategory = () => {
-    const {setPropByCategory,propByCategory}=useContext(PropContext)
-    const {state:{selectedPropCategory}}=useContext(FilterContext)
+    const {state:{propByCategory,selectedPropCategory},dispatch}=useContext(PropContext)
+  
   
     useEffect(() => {
-      getPropsByCategory();
-    
+      getPropsByCategory();    
     
     }, [selectedPropCategory]);
       
@@ -25,8 +25,7 @@ const PropByCategory = () => {
               id: doc.id,
               data:doc.data()
             }));
-            setPropByCategory(newArr)
-           
+             dispatch({type:'SET_PROPERTIES_BY_CATEGORY',payload:newArr})       
           }
     
  

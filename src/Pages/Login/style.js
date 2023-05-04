@@ -21,7 +21,7 @@ import { mobile } from "../../Responsive"
     border-radius: 7px;  
     padding:30px;
     width:25%;
-    
+    background-color:white;
     ${mobile({margin:'35px',padding:'20px',width:'80%'})} 
     
 `

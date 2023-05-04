@@ -1,43 +1,62 @@
-import React from 'react';
-import { BannerContainer,Form,Select,FilterBox,Input,Label} from './style';
-import { SearchOutlined } from '@mui/icons-material';
+import React,{useContext, useEffect} from 'react';
+import { BannerContainer,Form,Select,FilterBox,FilterOption,Input,Label,PriceRange,Button} from './style';
+import { Link, useNavigate } from 'react-router-dom';
+import { PropContext } from '../../Context/PropContextProvider';
+
+
 const Banner = () => {
+
+  const {state:{properties,selectedPropCategory,selectedPropType,currentLocation,maxPrice},dispatch}=useContext(PropContext)
+ 
+  const catg=[{id:1,title:'all'},{id:2,title:'house'},{id:3,title:'villa'},{id:4,title:'apartment'},{id:5,title:'office'}]
+  const navigate=useNavigate()
+
+    
+
+const applyFilters=async(event)=>
+{
+  event.preventDefault();
+  const filteredItems=properties?.filter(item=>(item.data.property===selectedPropType && item.data.category===selectedPropCategory && Number(item.data.price)<=maxPrice ) && item.data.address.includes(currentLocation))
+  dispatch({type:'LOAD_FILTERED_PROPERTIES',payload:filteredItems}); 
+  navigate('/properties')
+}
+  
+
     return (
         <>
-        <BannerContainer>             
-        
+        <BannerContainer>            
           <h1>Find The Perfect Place</h1>
           <h2>Find new & featured property located in your local city.</h2> 
-          <Form>
+          <Form onSubmit={applyFilters}>
+            <span style={{display:'flex',flexDirection:'row', justifyContent:'space-around',alignItems:'center'}}>
             <FilterBox>
               <Label>City/Street</Label>
-              <Input type='text' placeholder='Location' />
+              <Input type='text' placeholder='Location' onChange={(event)=>dispatch({type:'ADD_LOCATION',payload:event.target.value})}/>
             </FilterBox>
             <FilterBox>
               <Label>Property Sale/Rent</Label>
-              <Select>
-                <option>For Sale</option>
-                <option>For Rent</option>
+              <Select onChange={(event)=>dispatch({type:'SELECTED_TYPE',payload:event.target.value})} >
+                <FilterOption value='Select'>Select</FilterOption>
+              <FilterOption value='Rent'>Rent</FilterOption>
+              <FilterOption value='Sale'>Sale</FilterOption>
+             
               </Select>
             </FilterBox>
             <FilterBox>
-              <Label>Property Type</Label>
-              <Select>
-                <option>House</option>
-                <option>Villa</option>
-                <option>Apartment</option>
-                <option>Office</option>
+              <Label>Property Category</Label>
+              <Select onChange={(event)=>dispatch({type:'SELECTED_CATEGORY',payload:event.target.value})}>
+                {catg.map(item=>{return <FilterOption  key={item.id}value={item.title}>{item.title}</FilterOption>})}                
               </Select>
             </FilterBox>
             <FilterBox>
               <Label>Price Range</Label>
-              <Select>
-                <option>Below Aed 10000 </option>
-                <option>Aed 10000-Aed 20000</option>
-                <option>Above Aed 20000 </option>
-              </Select>
+              <PriceRange type='range' min={1} max={50000} value={maxPrice} onChange={(event)=>{dispatch({type:'SELECTED_PRICE_RANGE',payload:event.target.value})}}/> 
+              <p style={{marginLeft:'100px'}}>{new Intl.NumberFormat('en-US').format(maxPrice)} Aed </p>
             </FilterBox>
-           
+            </span> 
+            <span>
+           <Button type='submit'>Apply Filters</Button>
+           </span>
           </Form>               
         </BannerContainer>
         </>

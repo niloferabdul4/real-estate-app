@@ -11,6 +11,8 @@ import Register from './Pages/Register/Register';
 import { useContext } from 'react';
 import { PropContext } from './Context/PropContextProvider';
 import PropByType from './Pages/Property/PropByType';
+import Properties from './Pages/Properties/Properties';
+import Favourites from './Pages/Favourites/Favourites';
 
 function App() {
   const {user}=useContext(PropContext)
@@ -21,6 +23,8 @@ function App() {
                               
                 <Routes>
                     <Route path='/' element={user ? <Home /> : <Register />} />
+                    <Route path='/properties' element={ <Properties/> } />
+                    <Route path='/favourites' element={ <Favourites/> } />
                     <Route path='/category/:category' element={<PropByCategory/>}/>
                     <Route path='/property/:property' element={<PropByType/>}/>
                     <Route path="/details/:id" element={<PropertyDetails/>}/>
