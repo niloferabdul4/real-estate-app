@@ -9,7 +9,7 @@ import { mobile } from "../../Responsive";
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin:60px 0px;
+    margin:15px 0px;
    
 `
 

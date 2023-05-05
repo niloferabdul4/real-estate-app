@@ -4,11 +4,13 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { PropContext } from '../../Context/PropContextProvider';
 import { SubTitle } from '../Banner/style';
+import { useNavigate } from 'react-router-dom';
 
 
 const PropertyAgent = () => {
     const {state:{singlePropertyAgent}}=useContext(PropContext)
-  
+    const navigate=useNavigate()
+
   return (
     <div>
       
@@ -22,9 +24,9 @@ const PropertyAgent = () => {
                           </span>
                          </Agent>
                          <ButtonContainer>
-                              <Button>
-                                <EmailOutlinedIcon/>
-                                Email
+                              <Button onClick={()=>navigate('/contact')}>                                
+                                <EmailOutlinedIcon />                               
+                                Email                                
                             </Button>
                               <Button >
                                 <LocalPhoneIcon/>

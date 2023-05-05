@@ -14,7 +14,7 @@ export const ButtonContainer=styled.div`
        flex-direction: row;
        justify-content: center;
        align-items: center;
-       padding: 20px;
+       padding: 10px;
        gap:20px;
        margin-top:10px;
        ${mobile({ padding:'2px',gap:'4px'})}

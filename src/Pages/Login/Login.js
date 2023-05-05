@@ -4,6 +4,7 @@ import { Container,Wrapper,Title,Form,InputWrapper,Label,Input,SignIn,Span,Error
 import { auth } from '../../Firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast,ToastContainer } from 'react-toastify';
 
 
 const Login = () => {
@@ -36,7 +37,7 @@ const Login = () => {
                         }
                         
                         })
-      .catch((error)=>alert(error.message))
+      .catch((error)=>toast.error(error.message))
       
    }
 
@@ -57,7 +58,7 @@ const Login = () => {
                                             onChange={handleChange}
                                             required
                                             />   
-                                         <ErrorLabel>{formerrors.email}</ErrorLabel>    
+                                        <ToastContainer />   
                                     </InputWrapper>
                                     <InputWrapper>
                                             <Label html='password'>Password</Label>
@@ -69,10 +70,10 @@ const Login = () => {
                                             ref={inputRef}
                                             onChange={handleChange}
                                             required/>
-                                            <ErrorLabel>{formerrors.password}</ErrorLabel>
+                                            <ToastContainer/>
                                     </InputWrapper>                            
 
-                                    <SignIn>Sign In</SignIn>
+                                    <SignIn>Login</SignIn>
                     
                                     <Span>
                                             <Label>New User?</Label>

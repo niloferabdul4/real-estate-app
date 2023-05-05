@@ -13,6 +13,7 @@ import { PropContext } from './Context/PropContextProvider';
 import PropByType from './Pages/Property/PropByType';
 import Properties from './Pages/Properties/Properties';
 import SavedProperties from './Pages/SavedProperties/SavedProperties';
+import ContactForm from './Pages/ContactForm/ContactForm';
 
 function App() {
   const {user}=useContext(PropContext)
@@ -28,6 +29,7 @@ function App() {
                     <Route path='/category/:category' element={<PropByCategory/>}/>
                     <Route path='/property/:property' element={<PropByType/>}/>
                     <Route path="/details/:id" element={<PropertyDetails/>}/>
+                    <Route path='/contact' element={<ContactForm/>} />
                     <Route path='/login' element={user ? <Home /> : <Login />} />
                     <Route path='/register' element={user ? <Home /> : <Register />} />
                 </Routes>
