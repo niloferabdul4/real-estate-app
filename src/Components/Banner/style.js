@@ -78,10 +78,10 @@ const Bottom=styled.div`
  ${mobile({ padding:'8px',margin:'0px'})}
   `
 const FilterOption=styled.option`
- marging:18px;
- padding:18px;
- height:100px;
-
+    marging:18px;
+    padding:18px;
+    height:100px;
+    ${mobile({ padding:'8px',margin:'4px'})}
 
 `
   const Input=styled.input`
