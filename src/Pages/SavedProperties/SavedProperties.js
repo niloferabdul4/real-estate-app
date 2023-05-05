@@ -13,7 +13,7 @@ const SavedProperties = () => {
     <div>
        <Header/>
        <ToggleBar/>
-    {savedProperties.length>0 ? (<SubTitle>Saved List</SubTitle>): (<h2 style={{color:'#5A5A5A',margin:'300px'}}>No Properties To Show</h2>)}
+    {savedProperties.length>0 ? (<SubTitle>Saved List</SubTitle>): (<h2 style={{color:'#5A5A5A',margin:'30px'}}>No Properties To Show</h2>)}
     <Container>
        { savedProperties?.map(item=>{return <Card key={item.id}                                                           
                                                             name={item.data.name} 

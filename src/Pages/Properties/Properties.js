@@ -17,7 +17,7 @@ const Properties= () => {
     <>
     <Header/>
     <ToggleBar/>
-    {filteredProperties.length>0 ? (<SubTitle>Properties List</SubTitle>): (<h2 style={{color:'#5A5A5A',margin:'300px'}}>No Properties To Show</h2>)}
+    {filteredProperties.length>0 ? (<SubTitle>Properties List</SubTitle>): (<h2 style={{color:'#5A5A5A',margin:'30px'}}>No Properties To Show</h2>)}
     <Container>
             
     
