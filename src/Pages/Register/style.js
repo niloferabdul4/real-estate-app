@@ -24,7 +24,7 @@ export const Wrapper=styled.div`
     padding:30px;
     width:25%;
     background-color:white;
-    ${mobile({margin:'35px',padding:'20px',width:'80%'})} 
+    ${mobile({margin:'35px',padding:'15px',width:'100%'})} 
 
 `
 
@@ -45,8 +45,9 @@ export const InputWrapper=styled.div`
     display: flex;
     justify-content: center;
     align-items:flex-start;
-    flex-direction: column;   
-    ${mobile({padding:'6px'})}
+    flex-direction: column;
+    background-color:green;   
+    ${mobile({padding:'4px'})}
 
 `
 
@@ -54,7 +55,7 @@ export const Label=styled.label`
     font-weight: 600;
     margin: 10px 0px;
     text-align: left;  
-    ${mobile({fontSize:'14px'})} 
+    ${mobile({fontSize:'14px',margin:'6px 0px'})} 
 
 `
 

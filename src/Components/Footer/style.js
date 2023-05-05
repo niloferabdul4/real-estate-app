@@ -1,18 +1,21 @@
 import styled from "styled-components";
+import { mobile } from "../../Responsive";
 
   const Footr =styled.div`
     background-color: #1d2636;
     padding: 30px ;
     color: #fff;
+    ${mobile({ padding:'20px'})}
   `
   const Container=styled.div`
     display: grid;
     grid-template-columns: 6fr 2fr 2fr 1fr;
     grid-gap: 20px;
-  
+    ${mobile({ display:'flex',flexDirection:'column'})}
 
   h2 {
     font-weight: 500;
+    ${mobile({ fontSize:'18px'})}
   }
    p {
     color: grey;
@@ -22,6 +25,7 @@ import styled from "styled-components";
   h3 {
     font-weight: 500;
     margin-bottom: 30px;
+    ${mobile({ fontSize:'14px'})}
   }
   ul {
     display: block;
@@ -30,6 +34,7 @@ import styled from "styled-components";
     display: block;
     color: grey;
     margin-bottom: 20px;
+    ${mobile({ marginBottom:'10px'})}
   }
   `
 const Input =styled.input`
@@ -37,6 +42,7 @@ const Input =styled.input`
     padding: 17px;
     width: 100%;
     border-radius: 5px;
+    ${mobile({ padding:'10px',width:'80%'})}
 `
 
 const InputWrapper=styled.div`
@@ -52,6 +58,7 @@ const Button =styled.button`
     padding: 15px;
     width: 40%;
     border-radius: 8px;
+    ${mobile({ padding:'8px',width:'30%'})}
 `
   export {Footr,Container,Input,InputWrapper,Button}
   

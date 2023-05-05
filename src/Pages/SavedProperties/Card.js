@@ -1,18 +1,13 @@
-import React, { useContext, useState } from 'react'
-import { PropCard,PropImage,PropInfoContainer ,Description,Name,Span,Address,Category,Country} from './style';
+import React from 'react'
+import { PropCard,PropImage,PropInfoContainer ,Description,Name,Span,Address,Category} from '../../Components/PropertyCard/style';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Button,BtnContainer } from '../RecentProperty/style';
+import { Button,BtnContainer } from '../../Components/RecentProperty/style';
 import { useNavigate } from 'react-router-dom';
-import { PropContext } from '../../Context/PropContextProvider';
-const PropertyCard = ({id,name,image,country,price,address,description,category,property}) => {
-  const navigate=useNavigate()
-  const {state:{properties},dispatch}=useContext(PropContext)
 
-  const saveProp=(id)=>{
-    const currentProp=properties.find(item=>item.id===id)
-    dispatch({type:'SAVE_PROPERTIES',payload:currentProp})
-    navigate('/savedProperties')
-  }
+
+
+const Card = ({id,name,image,country,price,address,description,category,property}) => {
+  const navigate=useNavigate()
 
   return (
     <>
@@ -20,12 +15,11 @@ const PropertyCard = ({id,name,image,country,price,address,description,category,
         <PropImage src={image} alt='' role='button' onClick={()=>{navigate(`/details/${id}`)}} />      
                 <PropInfoContainer> 
                     <span style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
-                      <Name>{name}</Name>  
-                      <Button id='save'  onClick={()=>saveProp(id)}>Save</Button>
+                      <Name>{name}</Name>                       
                     </span>                        
                     <span style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'flex-start'}}>
                     <Category>{category}</Category>
-                      <Country><LocationOnIcon fontSize='small'/>{country}</Country>
+                      <p><LocationOnIcon fontSize='small'/>{country}</p>
                       <Address> {address}</Address>
                       <Description> {description}</Description>
                     </span> 
@@ -43,4 +37,4 @@ const PropertyCard = ({id,name,image,country,price,address,description,category,
   )
 }
 
-export default PropertyCard
+export default Card

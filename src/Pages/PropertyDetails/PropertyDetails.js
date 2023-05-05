@@ -70,7 +70,7 @@ useEffect(()=>{
                        
                         <Address> 
                           {singleProperty?.address}   
-                          <hr></hr>         
+                               
                         </Address>
                         <Span >
                           <p>Category: {singleProperty.category}</p>

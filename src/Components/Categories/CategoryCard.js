@@ -8,8 +8,6 @@ const {dispatch}=useContext(PropContext)
   const navigate=useNavigate()
 
   const handleClick=(category)=>{
-    
-    console.log(category)
     dispatch({type:'SELECTED_CATEGORY',payload:category})
     navigate(`/category/${category}`)
 

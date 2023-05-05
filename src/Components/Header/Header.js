@@ -1,17 +1,17 @@
 import React, { useContext } from 'react'
 import { HeaderContainer,LeftWrapper,Logo,RightWrapper,Links,Span,PropBtn } from './styles'
-import { FavoriteBorderOutlined } from '@mui/icons-material';
 import { PropContext } from '../../Context/PropContextProvider';
 import { auth } from '../../Firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
-  const {user,dispatch}=useContext(PropContext)
+  const {user,setMenuOpen,dispatch}=useContext(PropContext)
   const navigate=useNavigate()
 
-  const list=[{id:1,title:'Property For Sale', type:'Sale'},{id:2,title:'Property For Rent',type:'Rent'}]
+  const list=[{id:1,title:'Sale', type:'Sale'},{id:2,title:'Rent',type:'Rent'}]
+
 const handleClick=(event)=>
 {
  
@@ -30,11 +30,12 @@ const handleClick=(event)=>
     <div>
        <HeaderContainer>
             <LeftWrapper>
-              <Logo>Real ESTATE </Logo>   
+              <Logo>Property Finder </Logo>   
                     
             </LeftWrapper>
-            <RightWrapper>                                   
-                    <Links to='/favourites'>Favourites</Links>                                             
+            <RightWrapper>   
+                    <Links to='/'>Home</Links>                                 
+                    <Links to='/savedProperties'>Saved Properties</Links>                                             
                     
                     {list.map(item=>{return <PropBtn key={item.id} value={item.type} onClick={handleClick}>{item.title}</PropBtn>})}
                    
@@ -49,7 +50,8 @@ const handleClick=(event)=>
                     (<Links  to='/login' onClick={logoutFn}>Logout</Links>)
                    }                                   
                    
-                                                         
+                <MenuIcon style={{cursor:'pointer'}} onClick={()=>setMenuOpen(menuOpen=>!menuOpen)}/> 
+                                                  
             </RightWrapper> 
         </HeaderContainer>    
     </div>

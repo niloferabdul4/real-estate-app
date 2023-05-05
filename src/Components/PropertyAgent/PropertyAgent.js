@@ -3,6 +3,7 @@ import { Agent,AgentName,ContactNumber,Button,ButtonContainer,Image} from './sty
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { PropContext } from '../../Context/PropContextProvider';
+import { SubTitle } from '../Banner/style';
 
 
 const PropertyAgent = () => {
@@ -11,7 +12,7 @@ const PropertyAgent = () => {
   return (
     <div>
       
-                          <h2 style={{display:'flex',alignItems:'flex-start'}}>Agent Details</h2>
+                          <SubTitle style={{display:'flex',alignItems:'flex-start',marginBottom:'20px'}}>Agent Details</SubTitle>
                           <Agent>
                          
                          <Image src={singlePropertyAgent[0]?.image} />

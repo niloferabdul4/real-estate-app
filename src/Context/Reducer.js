@@ -1,3 +1,6 @@
+
+
+
 const Reducer=(state,action)=>{
     switch(action.type){
 
@@ -55,11 +58,12 @@ const Reducer=(state,action)=>{
             maxPrice:action.payload
                         
           }
-         case 'ADD_TO_FAVOURITES':
+
+         case 'SAVE_PROPERTIES':
          
-         if(!state.favourites.find(item=>item.id===action.payload.id))         
+         if(!state.savedProperties.find(item=>item.id===action.payload.id))         
          {                
-             state.favourites.push({                                             
+             state.savedProperties.push({                                             
                ...action.payload,
         
            })
@@ -67,7 +71,7 @@ const Reducer=(state,action)=>{
          
      return {
            ...state,
-           favourites:[...state.favourites]                               
+           savedProperties:[...state.savedProperties]                               
                                            
        }
        

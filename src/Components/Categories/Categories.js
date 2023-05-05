@@ -2,11 +2,12 @@ import React from 'react'
 import { categories } from '../../data'
 import { CategoriesContainer } from './style'
 import CategoryCard from './CategoryCard'
+import { SubTitle } from '../Banner/style'
 
 const Categories = () => {
   return (
     <>
-      <h2 style={{color:'#5A5A5A'}}>Categories</h2>
+      <SubTitle>Categories</SubTitle>
       <CategoriesContainer>
         {categories.map(item=>{return <CategoryCard  key={item.category} 
                                                     title={item.title} 

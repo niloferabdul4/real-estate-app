@@ -11,6 +11,7 @@ import Featured from '../../Components/Featured/Featured';
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import Agents from '../../Components/Agents/Agents';
+import ToggleBar from '../../Components/ToggleBar/ToggleBar';
 
 
 
@@ -20,12 +21,13 @@ const Home = () => {
   return (
     <div>
       <Header/>
+      <ToggleBar/>
       <Banner /> 
       <Categories />
       <Featured />
        <Agents/>
        <Footer/>
-      
+       
     </div>
   )
 }

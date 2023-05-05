@@ -4,7 +4,7 @@ import { mobile } from "../../Responsive";
 export const Image=styled.img`
      width:160px;
      height:160px;
-
+     ${mobile({ width:'100px',height:'100px'})}
 
 `
 
@@ -16,6 +16,8 @@ export const ButtonContainer=styled.div`
        align-items: center;
        padding: 20px;
        gap:20px;
+       margin-top:10px;
+       ${mobile({ padding:'2px',gap:'4px'})}
 
 `
 export const Button=styled.button`
@@ -41,14 +43,14 @@ export const Agent=styled.div`
       display:flex;
       flex-Direction:row;
       align-items:flex-start;
-
+      
 
 `
 
 export const AgentName=styled.p`
      font-size:22px;
      margin:20px 30px;
-
+     ${mobile({ fontSize:'18px',margin:'20px'})}
 
 `
 
@@ -56,5 +58,5 @@ export const ContactNumber=styled.p`
      font-size:20px;
      margin:20px 30px;
      color:coral;
-
+     ${mobile({ fontSize:'18px',margin:'20px'})}
 `

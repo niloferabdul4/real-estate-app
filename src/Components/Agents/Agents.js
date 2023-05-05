@@ -5,6 +5,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { PropContext } from '../../Context/PropContextProvider'
 import { Wrapper,Box,InfoContainer,ImageContainer,Image,Label,Button, ButtonContainer } from './style'
+import { SubTitle } from '../Banner/style';
 
 const Agents = () => {
   const {state:{agents},dispatch}=useContext(PropContext)
@@ -27,18 +28,21 @@ const Agents = () => {
        
     <>
        
-          <h2>Our Featured Agents </h2>
+          <SubTitle>Our Featured Agents </SubTitle>
              <Wrapper>
               {agents?.map(item =>{return <>
             
-                 <Box>
-                  <ImageContainer>
+                 <Box key={item.id} >
+                  <ImageContainer key={item.id}>
                     <Image src={item.data.image} alt='' />                      
                   </ImageContainer>
                  <InfoContainer>
-                  <Label>{item.data.address}</Label>
+                  <Label>
                   <h3>{item.data.name} </h3>
                   <p>{item.data.listings} Listings</p>
+
+                  </Label>
+                 
                   </InfoContainer>
                   <ButtonContainer>
                     <Button>

@@ -1,5 +1,5 @@
-import React,{useContext, useEffect} from 'react';
-import { BannerContainer,Form,Select,FilterBox,FilterOption,Input,Label,PriceRange,Button} from './style';
+import React,{useContext} from 'react';
+import { BannerContainer,Title,SubTitle,Form,Top,Bottom,Select,FilterBox,FilterOption,Input,Label,PriceRange,Button} from './style';
 import { Link, useNavigate } from 'react-router-dom';
 import { PropContext } from '../../Context/PropContextProvider';
 
@@ -25,10 +25,10 @@ const applyFilters=async(event)=>
     return (
         <>
         <BannerContainer>            
-          <h1>Find The Perfect Place</h1>
-          <h2>Find new & featured property located in your local city.</h2> 
+          <Title>Find The Perfect Place</Title>
+          <SubTitle>Find new & featured property located in your local city.</SubTitle> 
           <Form onSubmit={applyFilters}>
-            <span style={{display:'flex',flexDirection:'row', justifyContent:'space-around',alignItems:'center'}}>
+            <Top>
             <FilterBox>
               <Label>City/Street</Label>
               <Input type='text' placeholder='Location' onChange={(event)=>dispatch({type:'ADD_LOCATION',payload:event.target.value})}/>
@@ -53,10 +53,10 @@ const applyFilters=async(event)=>
               <PriceRange type='range' min={1} max={50000} value={maxPrice} onChange={(event)=>{dispatch({type:'SELECTED_PRICE_RANGE',payload:event.target.value})}}/> 
               <p style={{marginLeft:'100px'}}>{new Intl.NumberFormat('en-US').format(maxPrice)} Aed </p>
             </FilterBox>
-            </span> 
-            <span>
+            </Top> 
+            <Bottom>
            <Button type='submit'>Apply Filters</Button>
-           </span>
+           </Bottom>
           </Form>               
         </BannerContainer>
         </>

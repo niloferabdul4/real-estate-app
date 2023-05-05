@@ -8,8 +8,7 @@ import Reducer from './Reducer'
 export const PropContext=createContext()
 
 const PropContextProvider = ({children}) => {
-
-
+  
   useEffect(()=>{
       
     const unSub=onSnapshot(collection(db,'property'),(snapshot)=>{
@@ -25,8 +24,6 @@ const PropContextProvider = ({children}) => {
     };
   },[])
 
- 
- 
   const initialState={properties:[],
                       agents:[],
                       singlePropertyAgent:[],
@@ -37,12 +34,14 @@ const PropContextProvider = ({children}) => {
                       selectedPropCategory:'',
                       maxPrice:0,
                       filteredProperties:[],
-                      favourites:[]
+                      savedProperties:[]
                      
                     }
+
+                    
   const [state,dispatch]=useReducer(Reducer,initialState)
     const [user,setUser]=useState('')
-
+    const [menuOpen,setMenuOpen]=useState(false)
 
     useEffect(()=>{
       const unSub=onAuthStateChanged(auth,(user)=>{
@@ -64,6 +63,7 @@ const PropContextProvider = ({children}) => {
     <>
       <PropContext.Provider value={{state,dispatch,
                                     user,setUser,
+                                    menuOpen,setMenuOpen
                                     }} >
         {children}
       </PropContext.Provider>

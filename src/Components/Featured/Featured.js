@@ -7,12 +7,13 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import RecentPropertyCard from '../RecentProperty/RecentPropertyCard';
+import { SubTitle } from '../Banner/style';
 const Featured = () => {
  const {state:{properties}}=useContext(PropContext)
 
   return (
     <>
-    <h2 style={{color:'#5A5A5A'}}>Our Recent Properties</h2>
+    <SubTitle>Our Recent Properties</SubTitle>
     <FeaturedContainer>
      
      <Slider {...settings} >        

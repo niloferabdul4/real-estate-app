@@ -24,18 +24,18 @@ const Footer = () => {
           </div>
 
           {footer.map((val) => (
-            <div className='box'>
+            <div className='box' key={val.id}>
               <h3>{val.title}</h3>
               <ul>
                 {val.text.map((items) => (
-                  <li> {items.list} </li>
+                  <li key={items.id}> {items.list} </li>
                 ))}
               </ul>
             </div>
           ))}
         </Container>
         <div className='legal'>
-        <span>© 2023 Designd By Nilofer Abdul.</span>
+        <span>© 2023 Designed By Nilofer Abdul.</span>
       </div>
       </Footr>
       

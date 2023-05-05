@@ -12,14 +12,15 @@ const BannerContainer=styled.div `
     width: 100%;
     height:90vh; 
     padding:35px 0px;
-    z-index:1; 
+    z-index:1;
+    margin-bottom:50px; 
     h1{
         color:white;
     }
     h2{
         color:white;
     }
-    ${mobile({ flex:0.2,width:'380px'})}
+    ${mobile({ height:'70vh'})}
 `
 
 const Form=styled.form`
@@ -32,33 +33,49 @@ const Form=styled.form`
     gap:5px;
     z-index:100;
     box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%); 
+    ${mobile({ margin:'40px',padding:'10px'})}
   `
+const Top=styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    ${mobile({flexDirection:'column',justifyContent:'flex-start'})}
+`
 
+const Bottom=styled.div`
+
+    
+`
   const FilterBox =styled.div`    
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     align-items:flex-start;
     padding:8px;
+    width:100%;
+    ${mobile({ padding:'4px',flexDirection:'row',alignItems:'center',justifyContent:'center'})}
+   
   `
 
   const Select=styled.select`
     font-size: 16px;
     padding: 10px;
-    width: 100%;
+    width: 70%;
     border:none;
     border: 1px solid rgba(128, 128, 128, 0.2);
     margin: 10px;
     border-radius: 5px;
-   background-color:#fff;
+   //background-color:#fff;
    cursor:pointer;
+  
    box-shadow:0px 2px 4px rgba(0,0,0,0.2)
    transition:all 0.2s ease-in-out;
  &:focus{
   outline:none;
   box-shadow:0px 2px 4px rgba(0,0,0,0.3)
  }
-  
+ ${mobile({ padding:'8px',margin:'0px'})}
   `
 const FilterOption=styled.option`
  marging:18px;
@@ -72,24 +89,34 @@ const FilterOption=styled.option`
     padding: 10px;
     border: 1px solid rgba(128, 128, 128, 0.2);
     margin: 10px;
+    width:70%;
     border-radius: 5px;
     position:relative;
-   
+    ${mobile({ margin:'0px',padding:'8px'})}
   
   `
 
  const Label=styled.label`
     font-size: 16px;
     margin:10px;
+    ${mobile({ margin:'8px',fontSize:'14px'})}
  `
 
 
  
  const PriceRange=styled.input`
-  flex:0.4;
-
+  width:100%;
+  ${mobile({ margin:'8px',fontSize:'14px'})}
+`
+const Title=styled.h1`
+    margin:50px;
+    ${mobile({ fontSize:'24px',margin:'10px'})}
 `
 
+const SubTitle=styled.h2`
+    margin:30px;
+    ${mobile({ fontSize:'18px',margin:'10px'})}
+`
 const Button=styled.button`
     height:50px;
     width:140px;
@@ -99,6 +126,6 @@ const Button=styled.button`
     background-color:  #2874f0;
     color:white;
     cursor:pointer;
-
+    ${mobile({ height:'35px',fontSize:'0.96rem',width:'100px'})}
 `
-export {BannerContainer,Form,FilterBox,FilterOption,Select,Input,Label,PriceRange,Button}
+export {BannerContainer,Form,Top,Bottom,FilterBox,FilterOption,Select,Input,Label,PriceRange,Button,Title,SubTitle}

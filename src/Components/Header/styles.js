@@ -9,9 +9,9 @@ const HeaderContainer=styled.div`
     padding: 6px 0;
     position: sticky;
     top: 0;
-    //z-index: 99999;
     display:flex;
     flex-direction:row;
+    padding:0px 20px;
     ${mobile({ height:'50px', margin:'0px',width:'100%'})}   
  
 `
@@ -22,7 +22,7 @@ const LeftWrapper=styled.div`
     flex-direction: row;
     align-items: center;
     margin-left:30px;
-    ${mobile({ gap:'2px',marginLeft:'10px',justifyContent:'center'})}
+    ${mobile({flex:'0.6',marginLeft:'2px'})}
    
 `
 
@@ -32,7 +32,7 @@ const Logo=styled.h2`
     margin-right: 10px;
    // object-fit: contain;
     color:red;
-    ${mobile({ fontSize: "14px",marginRight:'5px' })}
+    ${mobile({ fontSize: "16px",marginRight:'5px' })}
 `
 
 const RightWrapper=styled.div`
@@ -42,47 +42,37 @@ const RightWrapper=styled.div`
     align-items: center;
     justify-content: space-around;
     color:#6F7378;
-    ${mobile({ gap:'1px',justifyContent:'space-around' })}
+    ${mobile({ marginRight:'2px',justifyContent:'flex-end'})}
 `
- 
-const Span=styled.span`
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4px;
-    gap:2px;
-    margin-right:10px;
-    ${mobile({ display:'none'})}
-    p{
-      font-size :16px ;
-      margin:0px;
-    }
-    h4{
-        color:orange;
-        font-size:16px;
-       
-    }
-`
+
 const PropBtn=styled.button`
     font-size: 18px;
     color:#6F7378;
     background:transparent;
     border:none;
     cursor:pointer;
-    ${mobile({ fontSize:'14px',marginLeft: "20px",gap:'0px' })}
+    &:hover{
+        transform:scale(1.1);
+        transition: transform  ease 0.5s; 
+       
+    }
+    ${mobile({ display:'none'})}
     
     
 `
 
 const Links=styled(NavLink)`
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     color:#6F7378;
-   cursor:pointer;
-    ${mobile({ fontSize:'14px',marginLeft: "20px",gap:'0px' })}
-    
+    cursor:pointer;
+    ${mobile({ display:'none'})}
+    &:hover{
+        transform:scale(1.1);
+        transition: transform  ease 0.5s; 
+       
+    }
     
 `
 
-export {HeaderContainer,LeftWrapper,Logo,RightWrapper,PropBtn,Links,Span}
+export {HeaderContainer,LeftWrapper,Logo,RightWrapper,PropBtn,Links}

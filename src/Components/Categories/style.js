@@ -25,7 +25,8 @@ import { mobile } from "../../Responsive";
                 justify-content:center;
                 padding:10px 20px;
                 cursor:pointer;
-               
+                margin-bottom:50px; 
+                ${mobile({ marginBottom:'20px',padding:'0px'})}
         `
 
         export const Card = styled.div`
@@ -45,7 +46,7 @@ import { mobile } from "../../Responsive";
                 {
                     opacity: 1;                      
                 }
-                ${mobile({height:'240px', width:'170px',margin:'6px'})}
+                ${mobile({height:'180px', width:'180px',margin:'2px',padding:'2px'})}
         `
         
 
@@ -58,7 +59,7 @@ import { mobile } from "../../Responsive";
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
-                ${mobile({fontSize:'14px',margin:'20px 0px'})}
+                ${mobile({fontSize:'12px',margin:'10px 2px'})}
         `
         
 
@@ -66,7 +67,7 @@ import { mobile } from "../../Responsive";
                 object-fit: cover; 
                 width: 70%;
                 height: 70%;
-                ${mobile({height:'70%', width:'80%'})}
+                ${mobile({height:'50%', width:'100%'})}
         `
         
 

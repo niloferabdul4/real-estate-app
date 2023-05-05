@@ -11,7 +11,8 @@ export const PropCard=styled.div`
     z-index: 1;
     height:600px;
     max-height: 700px;
-    max-width: 400px;  
+    width:360px;
+    max-width: 450px;  
     color:rgba(0,0,0,0.7)
     cursor:pointer; 
     position:relative;
@@ -20,14 +21,14 @@ export const PropCard=styled.div`
         box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
        
     }
-    ${mobile({ minHeight:'320px',maxWidth:'180px',margin:'0px',boxShadow:'none'})}
+    ${mobile({ flexDirection:'row',maxHeight:'260px',maxWidth:'360px',margin:'0px',marginBottom:'10px',boxShadow:'none',padding:'0px'})}
 `
 
 export const PropImage=styled.img`
     object-fit: cover;
     width:100%;
-    height:100%;   
-    ${mobile({ width:'140px',height:'140px',marginBottom:'10px'})}
+    height:50%;   
+    ${mobile({ width:'140px',height:'180px',marginBottom:'10px'})}
     `
 
 
@@ -35,31 +36,38 @@ export const PropInfoContainer=styled.div`
     display:flex;   
     flex-direction:column;   
     margin: 0px 10px;  
-    padding:15px;
+    padding:10px;
+    gap:10px;
     ${mobile({ padding:'0px',margin:'8px 10px'})}
    
  
 `
 
 export const Name=styled.p`
-    font-size:20px;
+    font-size:22px;
     font-weight:600;
+    margin:15px 0px;
+    ${mobile({margin:'0px',fontSize:'15px'})}
 
 `
 export const Price=styled.div`
-    margin:0px;
+    font-size:18px;
+    margin:15px 0px;
     ${mobile({ fontSize:'14px',margin:'10px'})}
 `
 export const Address=styled.p`
-
-display: -webkit-box;
+    font-size:17px;
+    margin:10px 0px;
+    display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;   
-    text-align:justify;
+    ${mobile({fontSize:'14px'})}
 
 `
 export const Description=styled.div`
+    font-size:17px;
+    margin:20px 0px;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 2;
@@ -81,6 +89,7 @@ export const Span =styled.div`
     right:10px;
     background-color:green;
     color:white;
+    ${mobile({ left:'10px',fontSize:'12px',top:'50px',padding:'5px'})}
 
 `
 
@@ -96,6 +105,12 @@ export const Category=styled.div`
     left:10px;
     background-color:yellow;
     opacity:0.8;
-   
+    ${mobile({ display:'none'})}
+
 
 `
+ export const Country=styled.p`
+    font-size:18px;
+ ${mobile({fontSize:'14px'})}
+ 
+ `

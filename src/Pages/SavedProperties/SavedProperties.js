@@ -2,16 +2,18 @@ import React, { useContext } from 'react'
 import { PropContext } from '../../Context/PropContextProvider'
 import { Container } from '../Properties/style'
 import Header from '../../Components/Header/Header'
-import PropertyCard from '../../Components/PropertyCard/PropertyCard'
+import Card from './Card'
+import styled from 'styled-components'
+import { SubTitle } from '../../Components/Banner/style'
 
-const Favourites = () => {
-    const {state:{favourites}}=useContext(PropContext)
+const SavedProperties = () => {
+    const {state:{savedProperties}}=useContext(PropContext)
   return (
     <div>
        <Header/>
-    {favourites.length>0 ? (<h2 style={{color:'#5A5A5A' }}>Favourites List</h2>): (<h2 style={{color:'#5A5A5A',margin:'300px'}}>No Properties To Show</h2>)}
+    {savedProperties.length>0 ? (<SubTitle>Saved List</SubTitle>): (<h2 style={{color:'#5A5A5A',margin:'300px'}}>No Properties To Show</h2>)}
     <Container>
-       { favourites?.map(item=>{return <PropertyCard key={item.id}                                                           
+       { savedProperties?.map(item=>{return <Card key={item.id}                                                           
                                                             name={item.data.name} 
                                                             image={item.data.image}
                                                             address={item.data.address}
@@ -30,4 +32,4 @@ const Favourites = () => {
   )
 }
 
-export default Favourites
+export default SavedProperties
