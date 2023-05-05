@@ -4,7 +4,8 @@ import {Link,useNavigate} from 'react-router-dom';
 import { RegisterContainer,Wrapper,Title,Form,InputWrapper,Label,Input,Button,SignIn} from './style';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../Firebase/firebase';
-import { toast } from 'react-toastify';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
@@ -41,18 +42,16 @@ const validate=(formData)=>
     const regX=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
         if (!regX.test(formData.Email))
         {
-                return toast.error('Email is Invalid', {
-                    position: toast.POSITION.TOP_CENTER
-                })
+                return toast.error('Email is Invalid')
         }
 
         else if (formData.ConfirmPassword!==formData.Password)
         {
-           return toast.error("Password didn't match", {
-            position: toast.POSITION.TOP_CENTER
-        })
+           return toast.error("Password didn't match")
         }
-       
+        else{
+            navigate('/')
+        }
         }                                         
 
 
@@ -75,7 +74,7 @@ const validate=(formData)=>
                                         onChange={handleChange}
                                  />                                                                   
                                
-                                 
+                           <ToastContainer/>      
                         </InputWrapper>
                         <InputWrapper>
                                 <Label htmlFor='pwd'>Password</Label>
@@ -87,7 +86,7 @@ const validate=(formData)=>
                                         onChange={handleChange}
                                 />                                                                  
                                
-                               
+                            <ToastContainer/>   
                         </InputWrapper>
                         <InputWrapper>
                                 <Label htmlFor='confirm'>Confirm Password</Label>
@@ -97,7 +96,7 @@ const validate=(formData)=>
                                         name='ConfirmPassword'  
                                         onChange={handleChange}
                                 />
-                                 
+                           <ToastContainer/>      
                         </InputWrapper>
 
                         <Button type='submit'>Continue</Button>
