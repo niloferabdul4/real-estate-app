@@ -49,14 +49,21 @@ export const Agent=styled.div`
 
 export const AgentName=styled.p`
      font-size:22px;
-     margin:20px 30px;
-     ${mobile({ fontSize:'18px',margin:'20px'})}
+     margin:10px 30px;
+     ${mobile({ fontSize:'18px',margin:'10px'})}
+
+`
+
+export const AgentEmail=styled.p`
+     font-size:18px;
+     margin:10px 30px;
+     ${mobile({ fontSize:'15px',margin:'10px'})}
 
 `
 
 export const ContactNumber=styled.p`
-     font-size:20px;
-     margin:20px 30px;
+     font-size:18px;
+     margin:10px 30px;
      color:coral;
-     ${mobile({ fontSize:'18px',margin:'20px'})}
+     ${mobile({ fontSize:'15px',margin:'10px'})}
 `

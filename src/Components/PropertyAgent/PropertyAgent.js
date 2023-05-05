@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import { Agent,AgentName,ContactNumber,Button,ButtonContainer,Image} from './style'
+import { Agent,AgentName,AgentEmail,ContactNumber,Button,ButtonContainer,Image} from './style'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { PropContext } from '../../Context/PropContextProvider';
@@ -18,8 +18,9 @@ const PropertyAgent = () => {
                           <Agent>
                          
                          <Image src={singlePropertyAgent[0]?.image} />
-                         <span>
-                         <AgentName>{singlePropertyAgent[0]?.name}</AgentName>
+                         <span style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
+                          <AgentName>{singlePropertyAgent[0]?.name}</AgentName>
+                          <AgentEmail>{singlePropertyAgent[0]?.email}</AgentEmail>
                           <ContactNumber>{singlePropertyAgent[0]?.phone}</ContactNumber>
                           </span>
                          </Agent>

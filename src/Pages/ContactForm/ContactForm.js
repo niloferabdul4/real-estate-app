@@ -5,6 +5,7 @@ import { SubTitle } from "../../Components/Banner/style";
 import Header from "../../Components/Header/Header";
 import ToggleBar from "../../Components/ToggleBar/ToggleBar";
 import emailjs from 'emailjs-com'
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 
 const ContactForm= () => {
