@@ -8,9 +8,8 @@ export const Container=styled.div`
         margin-right: auto;
         padding:60px;
         color:rgba(0,0,0,0.74);
-        background-color: white;
-        
-        ${mobile({ flexDirection:'column',padding:'0px',margin:'0px'})}
+        margin-bottom:50px;
+        ${mobile({ flexDirection:'column',padding:'0px',margin:'15px 0px'})}
        
 `
 export const ImageContainer=styled.div`
