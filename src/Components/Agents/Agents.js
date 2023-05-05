@@ -6,9 +6,12 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { PropContext } from '../../Context/PropContextProvider'
 import { Wrapper,Box,InfoContainer,ImageContainer,Image,Label,Button, ButtonContainer } from './style'
 import { SubTitle } from '../Banner/style';
+import { useNavigate } from 'react-router-dom';
 
 const Agents = () => {
   const {state:{agents},dispatch}=useContext(PropContext)
+  const navigate=useNavigate()
+
     useEffect(()=>{
       
         const unSub=onSnapshot(collection(db,'agents'),(snapshot)=>{
@@ -45,7 +48,7 @@ const Agents = () => {
                  
                   </InfoContainer>
                   <ButtonContainer>
-                    <Button>
+                    <Button onClick={()=>navigate('/contact')}>
                      <EmailOutlinedIcon/>
                       Email
                     </Button>
