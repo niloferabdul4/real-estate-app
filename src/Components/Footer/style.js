@@ -5,7 +5,7 @@ import { mobile } from "../../Responsive";
     background-color: #1d2636;
     padding: 30px ;
     color: #fff;
-    ${mobile({ padding:'20px'})}
+    ${mobile({ padding:'0px'})}
   `
   const Container=styled.div`
     display: grid;

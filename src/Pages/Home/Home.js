@@ -12,14 +12,14 @@ import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import Agents from '../../Components/Agents/Agents';
 import ToggleBar from '../../Components/ToggleBar/ToggleBar';
-
+import { HomeContainer } from './style';
 
 
 const Home = () => {
 
  
   return (
-    <div>
+    <HomeContainer>
       <Header/>
       <ToggleBar/>
       <Banner /> 
@@ -28,7 +28,7 @@ const Home = () => {
        <Agents/>
        <Footer/>
        
-    </div>
+    </HomeContainer>
   )
 }
 
