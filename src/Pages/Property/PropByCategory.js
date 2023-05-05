@@ -6,6 +6,7 @@ import { PropContainer } from './style'
 import { PropContext } from '../../Context/PropContextProvider'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+import ToggleBar from '../../Components/ToggleBar/ToggleBar'
 
 
 const PropByCategory = () => {
@@ -33,6 +34,7 @@ const PropByCategory = () => {
   return (
   <>
    <Header/>
+   <ToggleBar/>
     <PropContainer>
       {propByCategory?.map(item=>{return <PropertyCard key={item.id}
                                                             id={item.id}

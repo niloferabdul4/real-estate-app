@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
               <>
-                              
+                           
                 <Routes>
                     <Route path='/' element={user ? <Home /> : <Register />} />
                     <Route path='/properties' element={ <Properties/> } />

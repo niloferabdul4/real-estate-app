@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer/Footer'
 import PropertyCard from '../../Components/PropertyCard/PropertyCard'
 import { collection,where,query,getDocs } from '@firebase/firestore'
 import { db } from '../../Firebase/firebase'
+import ToggleBar from '../../Components/ToggleBar/ToggleBar'
 
 const PropByType = () => {
 
@@ -29,7 +30,8 @@ const PropByType = () => {
   return (
     <>
        <Header/>
-    <PropContainer>
+       <ToggleBar/>
+      <PropContainer>
       {propByType?.map(item=>{return <PropertyCard key={item.id}
                                                             id={item.id}
                                                             name={item.data.name} 

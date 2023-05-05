@@ -4,7 +4,7 @@ import { mobile } from "../../Responsive";
 
 const ToggleContainer=styled.div`
         flex-flow: column nowrap;
-        background-color: #4C0099;
+        background-color: dimgrey;
         border:none;
         position: fixed;
         top: 70px;

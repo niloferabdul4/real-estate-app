@@ -7,6 +7,7 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import PropertyAgent from '../../Components/PropertyAgent/PropertyAgent'
 import { PropContext } from '../../Context/PropContextProvider'
+import ToggleBar from '../../Components/ToggleBar/ToggleBar'
 
 const PropertyDetails = () => {
     const {dispatch}=useContext(PropContext)
@@ -14,7 +15,7 @@ const PropertyDetails = () => {
    
 
     const {id}=useParams()
-    const updatedPrice=new Intl.NumberFormat('en-US').format(singleProperty.price)
+    const updatedPrice=new Intl.NumberFormat('en-US').format(singleProperty?.price)
 
      useEffect(() => {
         id && getSingleProps();
@@ -52,10 +53,11 @@ useEffect(()=>{
 
   return (
     <> 
-    <Header/>
+  <Header />
+  <ToggleBar/>
        <Container  >                 
                 <ImageContainer>
-                    <Image src={singleProperty.image} alt='' />                    
+                    <Image src={singleProperty?.image} alt='' />                    
                 </ImageContainer>
 
                  <InfoContainer>
@@ -73,7 +75,7 @@ useEffect(()=>{
                                
                         </Address>
                         <Span >
-                          <p>Category: {singleProperty.category}</p>
+                          <p>Category: {singleProperty?.category}</p>
                      
                           <p>Bedrooms: {singleProperty?.bedrooms}</p>
                        

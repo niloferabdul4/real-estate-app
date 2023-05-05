@@ -5,12 +5,14 @@ import Header from '../../Components/Header/Header'
 import Card from './Card'
 import styled from 'styled-components'
 import { SubTitle } from '../../Components/Banner/style'
+import ToggleBar from '../../Components/ToggleBar/ToggleBar'
 
 const SavedProperties = () => {
     const {state:{savedProperties}}=useContext(PropContext)
   return (
     <div>
        <Header/>
+       <ToggleBar/>
     {savedProperties.length>0 ? (<SubTitle>Saved List</SubTitle>): (<h2 style={{color:'#5A5A5A',margin:'300px'}}>No Properties To Show</h2>)}
     <Container>
        { savedProperties?.map(item=>{return <Card key={item.id}                                                           
