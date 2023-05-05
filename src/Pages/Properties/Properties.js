@@ -22,7 +22,8 @@ const Properties= () => {
             
     
 
-       { filteredProperties?.map(item=>{return <PropertyCard key={item.id}                                                           
+       { filteredProperties?.map(item=>{return <PropertyCard key={item.id}  
+                                                            id={item.id}                                                         
                                                             name={item.data.name} 
                                                             image={item.data.image}
                                                             address={item.data.address}
