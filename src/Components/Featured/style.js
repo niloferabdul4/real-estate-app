@@ -11,5 +11,5 @@ margin-right: 50px;
 max-width  :100% ;
 padding: 10px;
 margin-bottom: 50px;
-${mobile({flexDirection:"column",padding:'0px', margin:'20px 4px'})}
+${mobile({flexDirection:"column",padding:'0px', margin:'20px 1px'})}
 `
