@@ -29,7 +29,7 @@ import { mobile } from "../../Responsive"
 
  const Title=styled.h2`
     font-weight: 400;
-    ${mobile({fontSize:'20px'})}
+    ${mobile({fontSize:'19px'})}
 `
 
  const Form =styled.form`
@@ -59,8 +59,7 @@ import { mobile } from "../../Responsive"
 `
 
  const Input=styled.input`   
-    width:94%;
-   
+    width:100%;   
     padding: 10px;
     ${mobile({padding:'6px'})}
 `

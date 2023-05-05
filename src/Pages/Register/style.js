@@ -31,7 +31,7 @@ export const Wrapper=styled.div`
 
 export const Title=styled.h2`
     font-weight: 600;
-    ${mobile({fontSize:'20px'})}
+    ${mobile({fontSize:'19px'})}
 `
 
 export const Form =styled.form`
@@ -46,8 +46,8 @@ export const InputWrapper=styled.div`
     justify-content: center;
     align-items:flex-start;
     flex-direction: column;
-    background-color:green;   
-    ${mobile({padding:'4px'})}
+   
+    ${mobile({padding:'10px'})}
 
 `
 
@@ -60,10 +60,9 @@ export const Label=styled.label`
 `
 
 export const Input=styled.input`
-width:94%;
-   
-padding: 10px;
-${mobile({padding:'6px'})}
+    width:100%;   
+    padding: 10px;
+    ${mobile({padding:'5px'})}
 `
 
 
@@ -80,7 +79,7 @@ export const Button=styled.button`
     cursor: pointer;
     border:none;
     background: linear-gradient(right bottom rgba(0,0,1,2));
-    ${mobile({height:'30px',fontSize:'0.95rem'})}
+    ${mobile({height:'30px',fontSize:'0.95rem',margin:'10px'})}
 
 `
 
