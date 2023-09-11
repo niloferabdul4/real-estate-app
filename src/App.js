@@ -16,22 +16,22 @@ import SavedProperties from './Pages/SavedProperties/SavedProperties';
 import ContactForm from './Pages/ContactForm/ContactForm';
 
 function App() {
-  const {user}=useContext(PropContext)
+  //const {user}=useContext(PropContext)
 
   return (
     <div className="App">
               <>
                            
                 <Routes>
-                    <Route path='/' element={user ? <Home /> : <Register />} />
+                    <Route path='/' element={<Home />} />
                     <Route path='/properties' element={ <Properties/> } />
                     <Route path='/savedProperties' element={ <SavedProperties/> } />
                     <Route path='/category/:category' element={<PropByCategory/>}/>
                     <Route path='/property/:property' element={<PropByType/>}/>
                     <Route path="/details/:id" element={<PropertyDetails/>}/>
                     <Route path='/contact' element={<ContactForm/>} />
-                    <Route path='/login' element={user ? <Home /> : <Login />} />
-                    <Route path='/register' element={user ? <Home /> : <Register />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/register' element={<Register />} />
                 </Routes>
              
     </>
