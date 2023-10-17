@@ -13,7 +13,7 @@ export const PropCard=styled.div`
     max-height: 700px;
     width:360px;
     max-width: 450px;  
-    color:rgba(0,0,0,0.7)
+    color:rgba(0,0,0,0.7);
     cursor:pointer; 
     position:relative;
     box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%); 
@@ -102,11 +102,10 @@ export const Category=styled.div`
     display: inline-block;
     position:absolute;
     top:240px;
-    left:10px;
+    left:6px;
     background-color:yellow;
     opacity:0.8;
     ${mobile({ display:'none'})}
-
 
 `
  export const Country=styled.p`

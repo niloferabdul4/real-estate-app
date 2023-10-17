@@ -5,7 +5,7 @@ import { mobile } from "../../Responsive";
     background-color: #1d2636;
     padding: 30px ;
     color: #fff;
-    ${mobile({ padding:'0px'})}
+    ${mobile({ padding:'20px 10px'})}
   `
   const Container=styled.div`
     display: grid;
@@ -15,7 +15,7 @@ import { mobile } from "../../Responsive";
 
   h2 {
     font-weight: 500;
-    ${mobile({ fontSize:'18px'})}
+    ${mobile({ fontSize:'16px'})}
   }
    p {
     color: grey;
@@ -58,6 +58,7 @@ const Button =styled.button`
     padding: 15px;
     width: 40%;
     border-radius: 8px;
+    margin: 15px;;
     ${mobile({ padding:'8px',width:'30%'})}
 `
   export {Footr,Container,Input,InputWrapper,Button}

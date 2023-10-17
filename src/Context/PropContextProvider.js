@@ -29,7 +29,6 @@ const PropContextProvider = ({children}) => {
                       singlePropertyAgent:[],
                       propByType:[],
                       propByCategory:[],
-                      currentLocation:'',
                       selectedPropType:'',
                       selectedPropCategory:'',
                       maxPrice:0,

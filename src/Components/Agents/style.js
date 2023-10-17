@@ -2,21 +2,20 @@ import styled from "styled-components";
 import { mobile } from "../../Responsive";
 export const Wrapper=styled.div`
     display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
     grid-column-gap:15px;
     z-index: 1;      
    margin:0px 100px 50px 100px; 
     padding: 10px;
-    margin-bottom: 50px;
-    ${mobile({margin:'0px 2px 0px 0px',gridTemplateColumns:'repeat(2,1fr)',padding:'0px'})}
+    ${mobile({margin:'0px',gridTemplateColumns:'repeat(2,1fr)',padding:'0px'})}
    
 `
 
 
 export const Box=styled.div`
-    width:280px;
-    height:320px;
-    margin:30px;
+    width:260px;
+    height:300px;
+    margin:20px;
     background-color:white;
     border-radius: 6px;
     border: 1px solid rgb(62 28 131 / 10%);
@@ -26,7 +25,7 @@ export const Box=styled.div`
         box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
         cursor: pointer;
     }
-    ${mobile({margin:'0px',width:'180px',height:'300px',padding:'0.40rem'})}
+    ${mobile({margin:'10px',width:'160px',height:'250px',padding:'0.40rem'})}
 
   `
   
@@ -40,7 +39,7 @@ export const Box=styled.div`
     height: 140px;
     margin: auto;
     position: relative;
-    ${mobile({width:'120px',height:'120px'})}
+    ${mobile({width:'100px',height:'100px'})}
   `
   export const Image=styled.img`
     width: 100%;
@@ -74,5 +73,5 @@ export const Box=styled.div`
     justify-content:center;
     gap:5px;
     cursor:pointer;
-    ${mobile({gap:'8px',width:'80px',height:'30px',fontSize:'0.90rem'})}
+    ${mobile({gap:'8px',width:'70px',height:'30px',fontSize:'0.90rem'})}
   `

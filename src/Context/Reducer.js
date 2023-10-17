@@ -29,13 +29,6 @@ const Reducer=(state,action)=>{
           return{
             ...state,filteredProperties:action.payload
           }
-        case 'ADD_LOCATION':
-         
-          return{
-            ...state,
-            currentLocation:action.payload
-          }
-       
         case 'SELECTED_CATEGORY':   
        
         return {

@@ -16,7 +16,7 @@ const Banner = () => {
 const applyFilters=async(event)=>
 {
   event.preventDefault();
-  const filteredItems=properties?.filter(item=>(item.data.property===selectedPropType && item.data.category===selectedPropCategory && Number(item.data.price)<=maxPrice ) && item.data.address.includes(currentLocation))
+  const filteredItems=properties?.filter(item=>(item.data.property===selectedPropType && item.data.category===selectedPropCategory && Number(item.data.price)<=maxPrice ))
   dispatch({type:'LOAD_FILTERED_PROPERTIES',payload:filteredItems}); 
   navigate('/properties')
 }
@@ -29,10 +29,6 @@ const applyFilters=async(event)=>
           <SubTitle>Find new & featured property located in your local city.</SubTitle> 
           <Form onSubmit={applyFilters}>
             <Top>
-            <FilterBox>
-              <Label>City/Street</Label>
-              <Input type='text' placeholder='Location' onChange={(event)=>dispatch({type:'ADD_LOCATION',payload:event.target.value})}/>
-            </FilterBox>
             <FilterBox>
               <Label>Property Sale/Rent</Label>
               <Select onChange={(event)=>dispatch({type:'SELECTED_TYPE',payload:event.target.value})} >
@@ -50,7 +46,7 @@ const applyFilters=async(event)=>
             </FilterBox>
             <FilterBox>
               <Label>Price Range</Label>
-              <PriceRange type='range' min={1} max={50000} value={maxPrice} onChange={(event)=>{dispatch({type:'SELECTED_PRICE_RANGE',payload:event.target.value})}}/> 
+              <PriceRange type='range' min={9000} max={50000} value={maxPrice} onChange={(event)=>{dispatch({type:'SELECTED_PRICE_RANGE',payload:event.target.value})}}/> 
               <p style={{marginLeft:'100px'}}>{new Intl.NumberFormat('en-US').format(maxPrice)} Aed </p>
             </FilterBox>
             </Top> 
