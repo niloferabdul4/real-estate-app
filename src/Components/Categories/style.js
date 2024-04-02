@@ -25,7 +25,7 @@ import { mobile } from "../../Responsive";
                 justify-content:center;
                 padding:10px 20px;
                 cursor:pointer;
-                margin-bottom:50px; 
+                margin:50px 0px; 
                 ${mobile({ marginBottom:'20px',padding:'0px'})}
         `
 

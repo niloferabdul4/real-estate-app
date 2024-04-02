@@ -10,7 +10,7 @@ const BannerContainer=styled.div `
     background-position: center;
     background-size: cover;   
     width: 100%;
-    height:90vh; 
+    height:100vh; 
     padding:35px 0px;
     z-index:1;
     margin-bottom:50px; 
@@ -44,7 +44,7 @@ const Top=styled.div`
 `
 
 const Bottom=styled.div`
-
+    
     
 `
   const FilterBox =styled.div`    
@@ -69,7 +69,7 @@ const Bottom=styled.div`
    //background-color:#fff;
    cursor:pointer;
   
-   box-shadow:0px 2px 4px rgba(0,0,0,0.2)
+   box-shadow:0px 2px 4px rgba(0,0,0,0.2);
    transition:all 0.2s ease-in-out;
  &:focus{
   outline:none;
@@ -78,7 +78,7 @@ const Bottom=styled.div`
  ${mobile({ padding:'8px',margin:'0px'})}
   `
 const FilterOption=styled.option`
-    marging:18px;
+    margin:18px;
     padding:18px;
     height:100px;
     ${mobile({ padding:'8px',margin:'4px'})}
@@ -114,7 +114,7 @@ const Title=styled.h1`
 `
 
 const SubTitle=styled.h2`
-    margin:30px;
+    margin:80px 50px 50px 50px ;
     ${mobile({ fontSize:'18px',margin:'10px'})}
 `
 const Button=styled.button`
