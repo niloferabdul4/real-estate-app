@@ -20,10 +20,11 @@ const Footer = () => {
               </InputWrapper>
             </div>
           </div>
-        </Container>
+      
         <div className='legal'>
         <span>© 2023 Designed By Nilofer Abdul.</span>
       </div>
+      </Container>
       </Footr>
       
     </>

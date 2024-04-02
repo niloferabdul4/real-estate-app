@@ -3,8 +3,8 @@ import { mobile } from "../../Responsive";
 
 export const Container=styled.div`
 display:grid;
-grid-template-columns: repeat( auto-fit, minmax(360px, 1fr) );
-grid-column-gap:20px;
+grid-template-columns: repeat( auto-fill, minmax(360px, 1fr) );
+grid-column-gap:20px; 
 z-index: 1;      
 margin-left: 50px;
 margin-right: 50px;  

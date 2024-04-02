@@ -8,11 +8,12 @@ import { mobile } from "../../Responsive";
     ${mobile({ padding:'20px 10px'})}
   `
   const Container=styled.div`
-    display: grid;
-    grid-template-columns: 6fr 2fr 2fr 1fr;
-    grid-gap: 20px;
-    ${mobile({ display:'flex',flexDirection:'column'})}
-
+    margin-inline:auto;
+    padding-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
   h2 {
     font-weight: 500;
     ${mobile({ fontSize:'16px'})}

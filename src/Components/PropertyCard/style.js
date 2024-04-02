@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { mobile } from "../../Responsive"
 
 export const PropCard=styled.div`    
-    margin:20px;
+   // margin:20px;
     display:flex;
     flex-direction: column;
     align-items: center;
