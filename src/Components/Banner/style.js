@@ -26,7 +26,7 @@ const BannerContainer=styled.div `
 const Form=styled.form`
     background-color: #fff;
     border-radius: 5px;
-    margin: 180px;
+    margin: 100px;
     padding: 20px;
     display:flex;
     flex-direction:column;
